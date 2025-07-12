@@ -1,12 +1,36 @@
-# React + Vite
+# Solana Token Launchpad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application for creating and launching SPL tokens on the Solana blockchain.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Connect Solana wallet
+- Create custom SPL tokens with metadata
+- Set token name, symbol, image, and initial supply
+- Mint tokens directly to your wallet
+- Built with Token-2022 program
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Connect Wallet**: Click "Connect Wallet" and select your Solana wallet
+2. **Fill Token Details**:
+   - **Token Name**: The full name of your token
+   - **Symbol**: Short symbol (e.g., "BTC", "ETH")
+   - **Image URL**: URL to your token's logo/image
+   - **Initial Supply**: Number of tokens to create
+3. **Create Token**: Click "Create Token" to deploy your token
+
+## How It Works
+
+1. Creates a new mint account with Token-2022 program
+2. Initializes metadata (name, symbol, image)
+3. Sets up token mint with 0 decimal places 
+4. Creates associated token account for your wallet
+5. Mints initial supply to your wallet
+
+## Dependencies
+
+- `@solana/wallet-adapter-react` - Wallet connection
+- `@solana/web3.js` - Solana blockchain interaction
+- `@solana/spl-token` - SPL token operations
+- `@solana/spl-token-metadata` - Token metadata
