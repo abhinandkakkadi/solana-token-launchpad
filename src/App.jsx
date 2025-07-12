@@ -15,7 +15,7 @@ import { TokenLaunchPad } from "./components/TokenLaunchpad";
 function App() {
   return (
     <div>
-      <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+      <ConnectionProvider endpoint={process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com"}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <div className="min-h-screen bg-gray-900 text-white">
